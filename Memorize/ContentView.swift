@@ -30,7 +30,11 @@ struct CardView: View {
     var body: some View {
         ZStack {
             RoundedRectangle(cornerRadius: 25.0)
+                .fill()
+                .foregroundColor(.white)
+            RoundedRectangle(cornerRadius: 25.0)
                 .stroke(lineWidth: 3)
+                
                 
             Text("✈️")
                 .font(.largeTitle)
@@ -48,6 +52,8 @@ struct CardView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
-            
+            .preferredColorScheme(.dark)
+        ContentView()
+            .preferredColorScheme(.light)
     }
 }
