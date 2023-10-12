@@ -16,46 +16,15 @@ struct ContentView: View {
         VStack{
             ScrollView{
                 LazyVGrid(columns: [GridItem(.adaptive(minimum: 65))]){
-                    ForEach(emojis[0..<emojiCount], id: \.self) { emojis in CardView(content: emojis).aspectRatio(2/3, contentMode: .fit)}
-                    
+                    ForEach(emojis[0..<emojiCount], id: \.self) { emojis in CardView(content: emojis).aspectRatio(2/3, contentMode: .fit)
+                        
+                    }
                 }
-                .foregroundColor(/*@START_MENU_TOKEN@*/.red/*@END_MENU_TOKEN@*/)
+                
             }
-        }
-        Spacer()
-        HStack{
-            remove
-            Spacer()
-            add
-            
+            .foregroundColor(/*@START_MENU_TOKEN@*/.red/*@END_MENU_TOKEN@*/)
         }
         .padding(.horizontal)
-        .font(.largeTitle)
-        
-        
-    }
-    
-    var remove: some View {
-        Button{
-            if emojiCount > 1{
-                emojiCount -= 1
-            }
-            
-        } label: {
-            Image(systemName: "minus.circle")
-        }
-    }
-    
-    var add: some View {
-        Button{
-            if emojiCount < emojis.count{
-                emojiCount += 1
-            }
-            
-        } label: {
-            Image(systemName: "plus.circle")
-        }
-        
         
     }
     
